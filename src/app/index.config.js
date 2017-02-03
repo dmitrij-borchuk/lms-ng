@@ -1,6 +1,7 @@
 (function() {
   'use strict';
 
+var asdasd = 456;
   angular
     .module('lmsNg')
     .config(config);

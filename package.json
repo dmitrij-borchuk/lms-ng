@@ -12,12 +12,30 @@
   },
   "scripts": {
     "test": "mocha backend/**/*.test.js",
-    "testFe": "gulp test"
+    "testFe": "gulp test",
+    "commit": "commit-wizard"
   },
-  "pre-push": [
-    "test",
-    "testFe"
-  ],
+  "config": {
+    "pre-git": {
+      "commit-msg": "simple",
+      "pre-commit": [
+        "gulp lint"
+      ],
+      "pre-push": [
+        "npm run test",
+        "npm run testFe"
+      ],
+      "post-commit": [],
+      "post-checkout": [
+        "npm install",
+        "bower install"
+      ],
+      "post-merge": [
+        "npm install",
+        "bower install"
+      ]
+    }
+  },
   "devDependencies": {
     "browser-sync": "~2.9.11",
     "browser-sync-spa": "~1.0.3",
@@ -63,6 +81,7 @@
     "main-bower-files": "~2.9.0",
     "mocha": "^3.2.0",
     "phantomjs": "~1.9.18",
+    "pre-git": "^3.12.0",
     "pre-push": "^0.1.1",
     "tap": "^10.0.2",
     "uglify-save-license": "~0.4.1",

@@ -18,6 +18,13 @@ gulp.task('scripts', function() {
   return buildScripts();
 });
 
+gulp.task('lint', function() {
+  return gulp.src(path.join(conf.paths.src, '/app/**/*.js'))
+    .pipe($.eslint())
+    .pipe($.eslint.format())
+    .pipe($.size());
+});
+
 function buildScripts() {
   return gulp.src(path.join(conf.paths.src, '/app/**/*.js'))
     .pipe($.eslint())
