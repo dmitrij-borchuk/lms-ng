@@ -14,7 +14,7 @@
     "test": "mocha backend/**/*.test.js",
     "testFe": "gulp test"
   },
-  "pre-commit": [
+  "pre-push": [
     "test",
     "testFe"
   ],
@@ -63,7 +63,7 @@
     "main-bower-files": "~2.9.0",
     "mocha": "^3.2.0",
     "phantomjs": "~1.9.18",
-    "pre-commit": "^1.2.2",
+    "pre-push": "^0.1.1",
     "tap": "^10.0.2",
     "uglify-save-license": "~0.4.1",
     "wiredep": "~2.2.2"
