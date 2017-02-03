@@ -55,3 +55,7 @@ Change <*****> to your configuation
 
 Error: listen EADDRINUSE 0.0.0.0:80
   > Something on your system is using port 80. If it is developer machine try to overwrite port in you 'userConfig.js' file `server: { port: 81 }`
+
+### TODO
+* Add linter
+* Auto API doc
