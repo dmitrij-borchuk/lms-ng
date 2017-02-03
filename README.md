@@ -8,16 +8,16 @@ Design: https://almsaeedstudio.com/themes/AdminLTE/pages/forms/general.html
 Generator user guide: https://github.com/Swiip/generator-gulp-angular/blob/master/docs/user-guide.md
 
 ## Requirements:
-  > MySql
-  > Node.js
+  * MySql
+  * Node.js
 
 ## Install:
-  > npm install -g gulp
-  > npm install -g bower
-  > npm install -g webdriver-manager
-  > npm install -g nodemon
-  > npm i
-  > bower i
+  * npm install -g gulp
+  * npm install -g bower
+  * npm install -g webdriver-manager
+  * npm install -g nodemon
+  * npm i
+  * bower i
 
 Create file 'userConfig.js' in 'backend' folder with following content:
 ```javascript
@@ -35,21 +35,19 @@ Change <*****> to your configuation
 
 
 ## Develop (Run in separate consoles):
-  > * gulp serve
-  > * nodemon backend
+  * gulp serve
+  * nodemon backend
 
 
 ## Unit-tests:
-  > * gulp test
+  * gulp test
 
 
 ## e2e tests (Run in separate consoles):
-  > * Run in cmd: webdriver-manager start
-  > * Run in other cmd: gulp protractor
+  * Run in cmd: webdriver-manager start
+  * Run in other cmd: gulp protractor
 
 ## Typical errors
 
 Error: listen EADDRINUSE 0.0.0.0:80
-  > * Something on your system is using port 80
-  > * if it is developer machine try to overwrite port in you 'userConfig.js' file
-  > *     server: { port: 81 }
+  > Something on your system is using port 80. If it is developer machine try to overwrite port in you 'userConfig.js' file `server: { port: 81 }`
