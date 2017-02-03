@@ -3,6 +3,8 @@
 var path = require('path');
 var gulp = require('gulp');
 var conf = require('./conf');
+var apidoc = require('gulp-api-doc');
+var nodemon = require('gulp-nodemon');
 
 var browserSync = require('browser-sync');
 var browserSyncSpa = require('browser-sync-spa');
@@ -60,4 +62,20 @@ gulp.task('serve:e2e', ['inject'], function () {
 
 gulp.task('serve:e2e-dist', ['build'], function () {
   browserSyncInit(conf.paths.dist, []);
+});
+
+gulp.task('dev', ['apidoc', 'beserver', 'serve']);
+
+gulp.task('beserver', function () {
+  nodemon({
+    script: 'backend/index.js',
+    watch: ['backend'],
+    tasks: ['apidoc']
+  });
+});
+
+gulp.task('apidoc', function () {
+  return gulp.src('backend/routing')
+    .pipe(apidoc())
+    .pipe(gulp.dest('documentation'));
 });
