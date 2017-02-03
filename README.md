@@ -1,17 +1,17 @@
 # lms-ng
 
-### Develop branch
+## Develop branch
 [ ![Codeship Status for dmitrij-borchuk/lms-ng develop](https://app.codeship.com/projects/6100caf0-cc6c-0134-17a1-7eac565ffce4/status?branch=develop)](https://app.codeship.com/projects/200206)
 
 Design: https://almsaeedstudio.com/themes/AdminLTE/pages/forms/general.html
 
 Generator user guide: https://github.com/Swiip/generator-gulp-angular/blob/master/docs/user-guide.md
 
-### Requirements:
+## Requirements:
   > MySql
   > Node.js
 
-Install:
+## Install:
   > npm install -g gulp
   > npm install -g bower
   > npm install -g webdriver-manager
@@ -34,22 +34,22 @@ module.exports = {
 Change <*****> to your configuation
 
 
-Develop (Run in separate consoles):
-  > gulp serve
-  > nodemon backend
+## Develop (Run in separate consoles):
+  > * gulp serve
+  > * nodemon backend
 
 
-Unit-tests:
-  > gulp test
+## Unit-tests:
+  > * gulp test
 
 
-e2e tests (Run in separate consoles):
-  > Run in cmd: webdriver-manager start
-  > Run in other cmd: gulp protractor
+## e2e tests (Run in separate consoles):
+  > * Run in cmd: webdriver-manager start
+  > * Run in other cmd: gulp protractor
 
 ## Typical errors
 
 Error: listen EADDRINUSE 0.0.0.0:80
-  > Something on your system is using port 80
-  > if it is developer machine try to overwrite port in you 'userConfig.js' file
-  >     server: { port: 81 }
+  > * Something on your system is using port 80
+  > * if it is developer machine try to overwrite port in you 'userConfig.js' file
+  > *     server: { port: 81 }
