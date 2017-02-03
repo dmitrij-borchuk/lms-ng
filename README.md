@@ -40,7 +40,11 @@ Change <*****> to your configuation
 
 
 ## Unit-tests:
+# Frontend
   * gulp test
+
+# Backend
+  * npm test
 
 
 ## e2e tests (Run in separate consoles):
