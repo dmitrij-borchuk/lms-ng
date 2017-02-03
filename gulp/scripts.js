@@ -22,7 +22,8 @@ gulp.task('lint', function() {
   return gulp.src(path.join(conf.paths.src, '/app/**/*.js'))
     .pipe($.eslint())
     .pipe($.eslint.format())
-    .pipe($.size());
+    .pipe($.size())
+    .pipe($.eslint.failAfterError());
 });
 
 function buildScripts() {
