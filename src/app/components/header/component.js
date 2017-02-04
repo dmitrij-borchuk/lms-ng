@@ -3,8 +3,8 @@
 
   var app = angular.module('lmsNg');
 
-  app.component('lmsMenu', {
-    templateUrl: 'app/components/menu/tpl.html',
+  app.component('lmsHeader', {
+    templateUrl: 'app/components/header/tpl.html',
     controller: ctrl,
     controllerAs: 'vm'
   });
