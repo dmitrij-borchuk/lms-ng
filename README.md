@@ -34,9 +34,8 @@ module.exports = {
 Change <*****> to your configuation
 
 
-## Develop (Run in separate consoles):
-  * gulp serve
-  * nodemon backend
+## Develop (Run in console):
+  * gulp dev
 
 
 ## Unit-tests:
