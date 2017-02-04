@@ -1,10 +1,9 @@
 (function() {
   'use strict';
 
-  angular.module('lmsNg').controller('usersCtrl', ctrl);
+  angular.module('lmsNg').controller('UsersController', ctrl);
 
   /** @ngInject */
-  function ctrl($timeout, webDevTec, toastr) {
-    var vm = this;
+  function ctrl() {
   }
 })();

@@ -7,7 +7,7 @@
   function config($routeProvider) {
     $routeProvider.when('/users', {
       templateUrl: 'app/users/tpl.html',
-      controller: 'usersCtrl',
+      controller: 'UsersController',
       controllerAs: 'vm'
     });
   }
