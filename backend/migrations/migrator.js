@@ -1,8 +1,7 @@
-'use strict';
-
-const _ = require('lodash');
-
 module.exports = function (DAL, options) {
+  'use strict';
+
+  const _ = require('lodash');
   options = options || {};
 
   const DEBUG = false;

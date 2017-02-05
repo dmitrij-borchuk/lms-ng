@@ -1,11 +1,15 @@
-'use strict';
 
 module.exports = function(DAL) {
+  'use strict';
   return {
     version: 1,
-    message: 'Created videos table',
+    message: 'Created users table',
     script: function (next) {
-      DAL.videos.createTable(next);
+      DAL.users.createTable().then(() => {
+        next();
+      }).catch((err) => {
+        console.error(err);
+      });
     }
-  }
+  };
 };

@@ -1,8 +1,8 @@
-'use strict';
-
-const Promise = require('promise');
-
 module.exports = function(connection) {
+  'use strict';
+
+  const Promise = require('promise');
+
   return {
     create: () => {
       return new Promise((resolve, reject) => {
@@ -61,4 +61,4 @@ module.exports = function(connection) {
       });
     }
   };
-}
+};

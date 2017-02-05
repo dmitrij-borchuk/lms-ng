@@ -1,9 +1,9 @@
-'use strict';
-
-const Promise = require('promise');
-const passwordHash = require('password-hash');
-
 module.exports = (connection) => {
+  'use strict';
+
+  const Promise = require('promise');
+  const passwordHash = require('password-hash');
+
   return {
     getById: (id) => {
       return new Promise((resolve, reject) => {
@@ -136,52 +136,59 @@ module.exports = (connection) => {
 
     // For migrations
     createTable: (cb) => {
-      let request = [
-        'CREATE TABLE ',
-        'IF NOT EXISTS ',
-        'users ',
-        '(',
-          'id int(255) NOT NULL AUTO_INCREMENT UNIQUE, ',
-          'firstName varchar(255), ',
-          'secondName varchar(255), ',
-          'email varchar(255) UNIQUE, ',
-          'password varchar(255), ',
-          'token varchar(255), ',
-          'PRIMARY KEY (id)',
-        ') '
-      ].join('');
+      return new Promise((resolve, reject) => {
+        let request = [
+          'CREATE TABLE ',
+          'IF NOT EXISTS ',
+          'users ',
+          '(',
+            'id int(255) NOT NULL AUTO_INCREMENT UNIQUE, ',
+            'firstName varchar(255), ',
+            'secondName varchar(255), ',
+            'email varchar(255) NOT NULL UNIQUE, ',
+            'password varchar(255), ',
+            'token varchar(255), ',
+            'resetToken varchar(255), ',
+            'permanent BOOLEAN NOT NULL DEFAULT false, ',
+            'blocked BOOLEAN NOT NULL DEFAULT false, ',
+            'PRIMARY KEY (id)',
+          ') '
+        ].join('');
 
-      return connection.query(request, cb);
-    },
-
-    addColumn_resetToken: function (cb) {
-      const request = [
-        'ALTER TABLE `users` ',
-        'ADD `resetToken` VARCHAR(255);'
-      ].join('');
-
-      return connection.query(request, cb);
-    },
-
-    addColumn_permanent: function (cb) {
-      const request = [
-        'ALTER TABLE `users` ',
-        'ADD `permanent` BOOLEAN ',
-        'DEFAULT FALSE;'
-      ].join('');
-
-      return connection.query(request, cb);
-    },
-
-    addColumn_blocked: function (cb) {
-      const request = [
-        'ALTER TABLE `users` ',
-        'ADD `blocked` BOOLEAN ',
-        'DEFAULT FALSE;'
-      ].join('');
-
-      return connection.query(request, cb);
+        connection.query(request, (err, response) => {
+          err ? reject(err) : resolve(response);
+        });
+      });
     }
 
-  }
-}
+    // addColumn_resetToken: function (cb) {
+    //   const request = [
+    //     'ALTER TABLE `users` ',
+    //     'ADD `resetToken` VARCHAR(255);'
+    //   ].join('');
+
+    //   return connection.query(request, cb);
+    // },
+
+    // addColumn_permanent: function (cb) {
+    //   const request = [
+    //     'ALTER TABLE `users` ',
+    //     'ADD `permanent` BOOLEAN ',
+    //     'DEFAULT FALSE;'
+    //   ].join('');
+
+    //   return connection.query(request, cb);
+    // },
+
+    // addColumn_blocked: function (cb) {
+    //   const request = [
+    //     'ALTER TABLE `users` ',
+    //     'ADD `blocked` BOOLEAN ',
+    //     'DEFAULT FALSE;'
+    //   ].join('');
+
+    //   return connection.query(request, cb);
+    // }
+
+  };
+};

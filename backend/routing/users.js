@@ -1,22 +1,21 @@
-/**
- * @api {get} /api/users Request Users list
- * @apiName GetUsers
- * @apiGroup Users
- *
- * @apiSuccess {Object[]} profiles       List of user profiles.
- * @apiSuccess {String}   profiles.name  User name.
- *
- * @apiSuccessExample Success-Response:
- *     HTTP/1.1 200 OK
- *     [{
- *       "name": "John"
- *     }]
- */
+module.exports = function (server, DAL) {
+  'use strict';
+  const Boom = require('Boom');
 
-'use strict';
-
-module.exports = function (server) {
-
+  /**
+   * @api {get} /api/users Request Users list
+   * @apiName GetUsers
+   * @apiGroup Users
+   *
+   * @apiSuccess {Object[]} profiles       List of user profiles.
+   * @apiSuccess {String}   profiles.name  User name.
+   *
+   * @apiSuccessExample Success-Response:
+   *     HTTP/1.1 200 OK
+   *     [{
+   *       "name": "John"
+   *     }]
+   */
   server.route({
     method: 'GET',
     path: '/api/users',
@@ -28,10 +27,11 @@ module.exports = function (server) {
       //   }
       // },
       handler: function (request, reply) {
-        // DAL.users.get(function (err, docs) {
-        //   !err ? reply(docs) : reply(JSON.stringify(err));
-        // });
-        reply([{name: 'User1'}]);
+        DAL.users.getAll().then((docs) => {
+          reply(docs);
+        }).catch((err) => {
+          reply(Boom.badImplementation(err));
+        });
       }
     }
   });

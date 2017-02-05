@@ -1,9 +1,9 @@
-'use strict';
-
-const path = require('path');
-const fs = require('fs');
-
 module.exports.init = function (server, DAL) {
+  'use strict';
+
+  const path = require('path');
+  const fs = require('fs');
+
   server.route({
     method: 'GET',
     path: '/{param*}',
