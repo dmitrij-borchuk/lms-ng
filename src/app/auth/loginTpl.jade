@@ -1,1 +1,22 @@
-.auth.login Login
+.auth.login 
+body
+  div.login-container
+    div.login-title
+      | LoginLMS
+    div.login-block
+      div.login-info
+        | Sign in to start your session
+      input(type="email",placeholder="Email").form-control.input-zone
+      input(type="password",placeholder="Password").form-control.input-zone
+      span.confirm
+        label
+          input(type="checkbox", name="agree")
+          | Remember me
+      button(type="button").btn.btn-primary.border-button
+        | Sign in
+      div.sign-block
+        | -OR-
+      button(type="button").btn.btn-primary.btn-block.sign-social
+        | Sign in using Facebook
+      button(type="button").btn.btn-danger.btn-block.sign-social
+        | Sign in using Google+
