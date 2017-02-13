@@ -7,6 +7,7 @@ body
       div.login-info
         | Sign in to start your session
       input(type="email",placeholder="Email").form-control.input-zone
+        span(aria-hidden="true").glyphicon.glyphicon-envelope
       input(type="password",placeholder="Password").form-control.input-zone
       span.confirm
         label
@@ -17,6 +18,11 @@ body
       div.sign-block
         | -OR-
       button(type="button").btn.btn-primary.btn-block.sign-social
+        span(aria-hidden="true").glyphicon.glyphicon-share-alt.icon-button
         | Sign in using Facebook
       button(type="button").btn.btn-danger.btn-block.sign-social
+        span(aria-hidden="true").glyphicon.glyphicon-send.icon-button
         | Sign in using Google+
+      div.links-block
+        a(href="#").restore_links I forgot my password
+        a(href="#").restore_links Register a new membership
