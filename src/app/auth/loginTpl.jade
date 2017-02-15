@@ -6,23 +6,27 @@ body
     div.login-block
       div.login-info
         | Sign in to start your session
-      input(type="email",placeholder="Email").form-control.input-zone
-        span(aria-hidden="true").glyphicon.glyphicon-envelope
-      input(type="password",placeholder="Password").form-control.input-zone
+      div.login-input
+        input.input-zone(type="email",placeholder="Email")
+        span.glyphicon.glyphicon-envelope.input-icon(aria-hidden="true")
+      div.login-input
+        input.input-zone(type="password",placeholder="Password")
+        span.glyphicon.glyphicon-lock.input-icon(aria-hidden="true")
       span.confirm
         label
           input(type="checkbox", name="agree")
           | Remember me
-      button(type="button").btn.btn-primary.border-button
+      button.btn.btn-primary.border-button(type="button")
         | Sign in
       div.sign-block
         | -OR-
-      button(type="button").btn.btn-primary.btn-block.sign-social
-        span(aria-hidden="true").glyphicon.glyphicon-share-alt.icon-button
+      button.btn.btn-primary.btn-block.sign-social.button-social(type="button")
+        span.glyphicon.glyphicon-share-alt.icon-button(aria-hidden="true")
+        div
         | Sign in using Facebook
-      button(type="button").btn.btn-danger.btn-block.sign-social
-        span(aria-hidden="true").glyphicon.glyphicon-send.icon-button
+      button.btn.btn-danger.btn-block.sign-social.button-social(type="button")
+        span.glyphicon.glyphicon-send.icon-button(aria-hidden="true")
         | Sign in using Google+
       div.links-block
-        a(href="#").restore_links I forgot my password
-        a(href="#").restore_links Register a new membership
+        a.restore_links(href="#") I forgot my password
+        a.restore_links(href="#") Register a new membership

@@ -1,6 +1,10 @@
 body {
   background-color: #d2d6de;
 
+  input:focus {
+    outline: none;
+  }
+
   .login-container {
     padding: 20px;
 
@@ -21,14 +25,37 @@ body {
         text-align: center;
       }
 
+      .login-input {
+        border: 1px solid #ccc;
+        margin-bottom: 10px;
+        line-height: 0px;
+      }
+
+      .login-input:hover {
+        outline: 2px solid #5fa4ff;
+      }
+
+      .login-input:focus {
+        background: #ffe;
+        border: 5px solid #29B0D9;
+      }
+
       .input-zone {
-        padding: 6px 16px;
-        margin-bottom: 15px;
+        padding: 6px 20px;
+        border: none;
+      }
+
+      .input-icon {
+        color: #777;
       }
 
       .border-button {
         border-radius: 0px;
         float: right;
+      }
+
+      .icon-button{
+        vertical-align: middle;
       }
 
       .sign-block {
@@ -40,11 +67,16 @@ body {
         border-radius: 0px;
       }
 
+      .button-social {
+        position: relative;
+      }
+
       .icon-button:first-child {
-        float: left;
+        position: absolute;
         width: 30px;
-        line-height: 20px;
-        border-right: 1px solid rgba(0,0,0,0.2);
+        left: 0;
+        border-right: 1px solid rgba(0, 0, 0, 0.2);
+        bottom: 0;
       }
 
     }
