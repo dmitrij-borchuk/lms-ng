@@ -1,1 +1,32 @@
-.auth.login Login
+.auth.login 
+body
+  div.login-container
+    div.login-title
+      | LoginLMS
+    div.login-block
+      div.login-info
+        | Sign in to start your session
+      div.login-input
+        input.input-zone(type="email",placeholder="Email")
+        span.glyphicon.glyphicon-envelope.input-icon(aria-hidden="true")
+      div.login-input
+        input.input-zone(type="password",placeholder="Password")
+        span.glyphicon.glyphicon-lock.input-icon(aria-hidden="true")
+      span.confirm
+        label
+          input(type="checkbox", name="agree")
+          | Remember me
+      button.btn.btn-primary.border-button(type="button")
+        | Sign in
+      div.sign-block
+        | -OR-
+      button.btn.btn-primary.btn-block.sign-social.button-social(type="button")
+        span.glyphicon.glyphicon-share-alt.icon-button(aria-hidden="true")
+        div
+        | Sign in using Facebook
+      button.btn.btn-danger.btn-block.sign-social.button-social(type="button")
+        span.glyphicon.glyphicon-send.icon-button(aria-hidden="true")
+        | Sign in using Google+
+      div.links-block
+        a.restore_links(href="#") I forgot my password
+        a.restore_links(href="#") Register a new membership
